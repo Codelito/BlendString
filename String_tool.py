@@ -90,6 +90,20 @@ class STRING(bpy.types.Operator):
         return {'FINISHED'}            # Lets Blender know the operator finished successfully.
 
 
+class WIRELINK_PT(bpy.types.Panel):
+    bl_idname = "object_stringtool_pt"
+    bl_label = "String"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "newprop"
+
+    def draw(self, context):
+        # You can set the property values that should be used when the user
+        # presses the button in the UI.
+        props = self.layout.operator('object.wirelink_ot')
+
+
+
             
 def register():
     bpy.utils.register_class(STRING)
